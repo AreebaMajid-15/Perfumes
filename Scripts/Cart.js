@@ -1,31 +1,30 @@
+
 import { baseURL } from "./Baseurl.js";
 
 
-
-// to display todo data
+/// to display todo data
 getTodo();
 async function getTodo() {
   try {
-    let res = await fetch(`${baseURL}/PerfumeBestSel`);
+    let res = await fetch(`${baseURL}/PerfumeCart`);
     let data = await res.json();
     return data;
   } catch (err) {
     console.log(err);
-    alert("something went wrong in displaying best-seller items");
+    alert("something went wrong in displaying Girl Perfume items");
   }
 }
 
 function displayTodo(arr) {
-  let cont = document.getElementById("BestSeller");
+  let cont = document.getElementById("Perf");
   cont.innerHTML = "";
 
   arr.map((el, i) => {
     let parent = document.createElement("div");
     parent.id = "parent"
-    parent.setAttribute("class", "Best-sell-card");
+    parent.setAttribute("class", "Cart-perf-card");
 
     let Image = document.createElement("img");
-    Image.setAttribute("id", "Best-Sel-Img")
     Image.src =  `${el.Image}`;
     parent.appendChild(Image)
 
@@ -37,6 +36,7 @@ function displayTodo(arr) {
    let price = document.createElement("h5");
    price.textContent = `${el.Price}`;
    parent.appendChild(price)
+
 
    // let Deadline = document.createElement("h5");
    // Deadline.textContent = `Deadline: ${el.Deadline}`;
@@ -64,7 +64,7 @@ function displayTodo(arr) {
    //   DeleteTodofun(el, i);
    // });
 
-    parent.append(Image, Title, price);
+    parent.append(Image, Title, price );
     cont.append(parent);
   });
 }
@@ -72,23 +72,3 @@ window.onload = async () => {
   let arr = await getTodo();
   displayTodo(arr);
 };
-
-
-
- let viewallbtn = document.getElementById("ViewAll")
- viewallbtn.addEventListener("click", function(){
-    window.location.href = "Luxury.html"
- })
-
-
- // for her and him btn 
-
- let HerBtn = document.getElementById("HerBtn")
- HerBtn.addEventListener("click", function(){
-    window.location.href = "Girls.html"
- })
-
- let HimBtn = document.getElementById("HimBtn")
- HimBtn.addEventListener("click", function(){
-    window.location.href = "Boys.html"
- })

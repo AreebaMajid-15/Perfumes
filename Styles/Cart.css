@@ -1,4 +1,5 @@
 
+
 #Nav{
     width: 10rem;
     background-color: black;
@@ -21,14 +22,16 @@ a{
     
 }
 
-/* Girls perfume display */ 
+
+/* Cart item */
+
 #Perf{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 
 }
-.Girl-perf-card{
+.Cart-perf-card{
    
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -36,24 +39,4 @@ a{
 img{
     width: 100%;
     height: 200px;
-}
-
-#AddCartBtn{
-    background-color: black;
-    color: gold;
-    text-align: center;
-    margin: auto;
-    width: 30%;
-
-}
-
-
-#ViewCart{
-    background-color: black;
-    color: gold;
-    text-align: center;
-    margin: auto;
-    width: 30%;
-    align-items: center;
-    margin-left: 400px;
 }

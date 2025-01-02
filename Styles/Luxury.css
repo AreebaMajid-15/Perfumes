@@ -5,8 +5,7 @@
     color: gold;
     width: 100%;
     text-align: center;
-padding: 0px;
-
+    padding: 0px;
 }
 
 #Logo{
@@ -21,14 +20,17 @@ a{
     
 }
 
-/* Girls perfume display */ 
+/* Nav bottom */
+
+
+/* luxury perfume display */ 
 #Perf{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 
 }
-.Girl-perf-card{
+.Lux-perf-card{
    
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -46,7 +48,6 @@ img{
     width: 30%;
 
 }
-
 
 #ViewCart{
     background-color: black;

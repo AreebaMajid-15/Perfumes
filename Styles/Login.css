@@ -5,7 +5,7 @@
     color: gold;
     width: 100%;
     text-align: center;
-
+    padding: 0px;
 }
 
 #Logo{
@@ -31,6 +31,7 @@ a{
     color: gold;
     padding: center;
     background-color:black ;
+    border-radius: 10px;
     
 }
 #form input{
@@ -50,7 +51,7 @@ select{
     background-color: black;
     border-radius: 5px;
     color: gold;
- 
+    border: 1px solid gold;
     width: 60%;
     height: 2rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

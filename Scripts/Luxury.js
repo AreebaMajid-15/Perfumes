@@ -1,12 +1,36 @@
+
+
 import { baseURL } from "./Baseurl.js";
 
 
 
-// to display todo data
+function AddtocartFun(Cartobj){
+    console.log(Cartobj)
+    console.log("worjk")
+    fetch(`${baseURL}/PerfumeCart`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body:JSON.stringify(Cartobj),
+    })
+      .then(() => {
+        alert("Item Added in Cart");
+      })
+      .catch((err) => {
+        alert("something went wrong in adding item to cart");
+        console.log(err);
+      });
+  }
+   
+
+
+
+/// to display todo data
 getTodo();
 async function getTodo() {
   try {
-    let res = await fetch(`${baseURL}/PerfumeBestSel`);
+    let res = await fetch(`${baseURL}/PerfumeLuxury`);
     let data = await res.json();
     return data;
   } catch (err) {
@@ -16,16 +40,15 @@ async function getTodo() {
 }
 
 function displayTodo(arr) {
-  let cont = document.getElementById("BestSeller");
+  let cont = document.getElementById("Perf");
   cont.innerHTML = "";
 
   arr.map((el, i) => {
     let parent = document.createElement("div");
     parent.id = "parent"
-    parent.setAttribute("class", "Best-sell-card");
+    parent.setAttribute("class", "Lux-perf-card");
 
     let Image = document.createElement("img");
-    Image.setAttribute("id", "Best-Sel-Img")
     Image.src =  `${el.Image}`;
     parent.appendChild(Image)
 
@@ -38,8 +61,12 @@ function displayTodo(arr) {
    price.textContent = `${el.Price}`;
    parent.appendChild(price)
 
-   // let Deadline = document.createElement("h5");
-   // Deadline.textContent = `Deadline: ${el.Deadline}`;
+    let AddCart = document.createElement("button");
+     AddCart.textContent = "Add To Cart";
+     AddCart.setAttribute("id", "AddCartBtn")
+     AddCart.addEventListener("click", function(){
+        AddtocartFun(el)
+     })
 
   //  let Priority = document.createElement("h5");
   //  Priority.textContent = `Priority: ${el.Priority}`;
@@ -64,7 +91,7 @@ function displayTodo(arr) {
    //   DeleteTodofun(el, i);
    // });
 
-    parent.append(Image, Title, price);
+    parent.append(Image, Title, price, AddCart);
     cont.append(parent);
   });
 }
@@ -74,21 +101,7 @@ window.onload = async () => {
 };
 
 
-
- let viewallbtn = document.getElementById("ViewAll")
- viewallbtn.addEventListener("click", function(){
-    window.location.href = "Luxury.html"
- })
-
-
- // for her and him btn 
-
- let HerBtn = document.getElementById("HerBtn")
- HerBtn.addEventListener("click", function(){
-    window.location.href = "Girls.html"
- })
-
- let HimBtn = document.getElementById("HimBtn")
- HimBtn.addEventListener("click", function(){
-    window.location.href = "Boys.html"
- })
+let  Viewcart = document.getElementById("ViewCart")
+Viewcart.addEventListener("click", function(){
+    window.location.href = "Cart.html"
+})
