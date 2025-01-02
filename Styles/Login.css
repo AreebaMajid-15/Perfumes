@@ -1,0 +1,58 @@
+/* nav bar */ 
+#Nav{
+    width: 10rem;
+    background-color: black;
+    color: gold;
+    width: 100%;
+    text-align: center;
+
+}
+
+#Logo{
+    display: grid;
+    grid-template-columns: 60% 25% 25%;
+}
+
+a{
+    color: gold;
+    padding: 30px;
+    margin: 10px;
+    
+}
+
+/*  LOGIN FORM */
+#form{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 20px;
+    margin: 3rem auto;
+    color: gold;
+    padding: center;
+    background-color:black ;
+    
+}
+#form input{
+    height: 20px;
+    width: 60%;
+    align-self: center;
+}
+select{
+    height: 20px;
+    color: gold;
+    align-self: center;
+    width: 60%;
+}
+
+
+#submit{
+    background-color: black;
+    border-radius: 5px;
+    color: gold;
+ 
+    width: 60%;
+    height: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+}

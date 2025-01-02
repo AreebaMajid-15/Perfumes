@@ -1,0 +1,122 @@
+.body{
+    background-color: black;
+}
+#Nav{
+    width: 10rem;
+    background-color: black;
+    color: gold;
+    width: 100%;
+    text-align: center;
+
+}
+
+#Logo{
+    display: grid;
+    grid-template-columns: 60% 25% 25%;
+}
+
+a{
+    color: gold;
+    padding: 30px;
+    margin: 10px;
+    
+}
+
+/* best seller page */ 
+#BestSeller{
+    display: grid;
+    grid-template-columns: 32% 32% 32% ;
+    gap: 10px;
+    height:  300px;
+    margin: 10px
+
+}
+
+#parent{
+    border: 2px solid black;
+    background-color: grey;
+
+}
+#ViewAll{
+    justify-content: center;
+    height: 50px;
+    border: 2px solid grey;
+    text-align: center;
+    width: 20%;
+   margin-left: 450px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+#ViewAll:hover{
+    background-color: black;
+    color: gold;
+}
+
+
+/* OFFER IMAGE */ 
+#offer-img{
+    width: 100%;
+    height:   265px;
+}
+/*Fragrence */
+#Farg-Head{
+    text-align: center;
+    margin: 30px;
+}
+
+#Frangrance{
+    display: flex;
+    padding: 20px;
+}
+#Girl{
+    width: 50%;
+    border: 2px solid black;
+    height: 200px;
+    margin: 10px;
+}
+#Boy{
+    width: 50%;
+    border: 2px solid black;
+    height: 200px;
+    margin: 10px;
+}
+
+/*category*/
+#Cat-Haed{
+    text-align: center;
+}
+#Category{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    
+}
+#Him{
+    border: 1px solid black;
+    width: 40%;
+    border-radius: 50%;
+    height: 200px;
+    margin: 20px;
+    align-items: center;
+    background-color: rgb(0, 234, 255);
+}
+#Her{
+    border: 1px solid black;
+    width: 40%;
+    border-radius: 50%;
+    height: 200px;
+    margin: 20px;
+    align-items: center;
+    background-color: pink;
+}
+
+#HerBtn{
+    background-color:pink ;
+    color: white;
+    width: 150px;
+    height: 25px;
+    text-align: center;
+     margin: 75px;
+     margin-bottom: 30px;
+    align-items: center;
+}
