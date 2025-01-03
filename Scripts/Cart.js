@@ -56,15 +56,16 @@ function displayTodo(arr) {
    //   updateStatusfun(el, i);
    // });
 
-    //to delete todo
-   // let DeleteBtn = document.createElement("button");
-   // DeleteBtn.textContent = "Delete Todo";
+    //to delete item from cart 
+     let DeleteBtn = document.createElement("button");
+     DeleteBtn.setAttribute("id" , "DeleteBtn")
+    DeleteBtn.textContent = "Remove Product";
 
-   // DeleteBtn.addEventListener("click", function () {
-   //   DeleteTodofun(el, i);
-   // });
+    DeleteBtn.addEventListener("click", function () {
+     DeleteTodofun(el, i);
+      });
 
-    parent.append(Image, Title, price );
+    parent.append(Image, Title, price, DeleteBtn );
     cont.append(parent);
   });
 }
@@ -72,3 +73,19 @@ window.onload = async () => {
   let arr = await getTodo();
   displayTodo(arr);
 };
+
+// to delete item
+function DeleteTodofun(el, i) {
+  let deleteID = el.id;
+  fetch(`${baseURL}/PerfumeCart/${deleteID}`, {
+    method: "DELETE",
+  })
+    .then(() => {
+      alert("Product Removed From Cart");
+      window.location.reload();
+    })
+    .catch((err) => {
+      alert("Something went wrong in removing item");
+      console.log(err);
+    });
+}
