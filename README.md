@@ -43,7 +43,9 @@ npx http-server
 
 ## 📌 Future Enhancements
 🔹 Add payment gateway integration (Stripe/PayPal)
+
 🔹 Improve UI animations & transitions
+
 🔹 Add product filtering & search feature
 
 
