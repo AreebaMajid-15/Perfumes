@@ -2,6 +2,17 @@
 import { baseURL } from "./Baseurl.js";
 
 
+// to save login info 
+
+// Example after successful login
+function loginUser() {
+    // After verifying the username & password, store login status
+    localStorage.setItem("isLoggedIn", "true");
+    // Redirect to homepage or wherever
+    window.location.href = "index.html";
+}
+
+
 // to fetch user data from form
 let form = document.getElementById("form")
 form.addEventListener("submit", function () {

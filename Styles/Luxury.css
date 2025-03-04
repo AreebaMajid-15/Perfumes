@@ -1,4 +1,11 @@
 
+body{
+    padding: 0px;
+    margin: 0px;
+    /* background-color: black; */
+
+}
+
 #Nav{
     width: 10rem;
     background-color: black;
@@ -17,6 +24,8 @@ a{
     color: gold;
     padding: 30px;
     margin: 10px;
+    text-decoration: none;
+
     
 }
 
@@ -44,9 +53,11 @@ img{
     background-color: black;
     color: gold;
     text-align: center;
+    width: 50%;
     margin: auto;
-    width: 30%;
-
+    justify-content: center;
+    text-decoration: center;
+     
 }
 
 #ViewCart{

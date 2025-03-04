@@ -4,36 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  <link rel="stylesheet" href="Styles/Cart.css">
+    <link rel="stylesheet" href="Styles/Cart.css">
 </head>
 <body>
 
-      <!--nav bar--> 
-      <div id="Nav">
-        <!--nav bar logo--> 
-        <div id="Logo">
-          <div>
-            &diams; REEBA   PERFUMES
-          </div> 
-          <div> 
-            <a  style="color: gold;" href="Sign.html">Signup</a>
-            <a  style="color: gold;" href="Login.html">Login</a> 
-          </div>
-       </div>
-        <br>
-        <!--nav bar parts--> 
-
-        <div id="Parts">
-         
-         <a  style="color: gold;" href="Girls.html">Girls</a>
-         <a  style="color: gold;" href="Boys.html">Boys</a>
-         <a   style="color: gold;" href="Luxury.html">Luxury</a>
+<!--nav bar--> 
+<div id="Nav">
+    <div id="Logo">
+      <a style="color: gold ; text-decoration: none; margin: 0px; padding: 0px;" href="index.html"> &diams; EEBA PERFUMES</a>
+      <div>
+            <a style="color: gold;" href="Sign.html">Signup</a>
+            <a style="color: gold;" href="Login.html">Login</a>
         </div>
-        <br>
-        <h1 id="ItemHead"> Your Cart</h1>  
- </div>
- <div id="Perf"></div>
-    
-</body>
+    </div>
+    <br>
+    <div id="Parts">
+        <a style="color: gold;" href="Girls.html">Girls</a>
+        <a style="color: gold;" href="Boys.html">Boys</a>
+        <a style="color: gold;" href="Luxury.html">Luxury</a>
+    </div>
+    <br>
+    <h1 id="ItemHead">Your Cart</h1>
+</div>
+
+<div id="Perf"></div>
+
+<!-- ORDER BUTTON SECTION -->
+<div class="container">
+    <button class="place-order-btn" id="orderButton">Add items to cart</button>
+</div>
+
+<!-- POPUP -->
+<div class="popup-overlay" id="popup">
+    <div class="popup-box">
+        <p>Order Placed Successfully!</p>
+        <button id="closeButton">OK</button>
+    </div>
+</div>
+
 <script src="Scripts/Cart.js" type="module"></script>
+</body>
 </html>

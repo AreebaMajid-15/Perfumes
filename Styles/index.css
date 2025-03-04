@@ -20,6 +20,8 @@ a{
     color: gold;
     padding: 30px;
     margin: 10px;
+    text-decoration: none;
+
     
 }
 
@@ -137,3 +139,10 @@ a{
 
 }
 
+/*Footer*/
+#Fote{
+    height: 400px;
+    width: 100%;
+    color: rgb(225, 220, 220);
+    background-color: grey;
+}

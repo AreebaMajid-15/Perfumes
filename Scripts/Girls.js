@@ -2,6 +2,15 @@
 import { baseURL } from "./Baseurl.js";
 
 
+// tocheck iflogin
+
+window.onload = function () {
+  let isLoggedIn = localStorage.getItem("isLoggedIn");
+  if (isLoggedIn !== "true") {
+      alert("Please login to access this page.");
+      window.location.href = "Login.html"; // Redirect to login page
+  }
+}
 
 
 function AddtocartFun(Cartobj){

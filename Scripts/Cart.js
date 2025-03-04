@@ -1,91 +1,114 @@
-
 import { baseURL } from "./Baseurl.js";
 
-
-/// to display todo data
-getTodo();
+// Fetch cart items
 async function getTodo() {
-  try {
-    let res = await fetch(`${baseURL}/PerfumeCart`);
-    let data = await res.json();
-    return data;
-  } catch (err) {
-    console.log(err);
-    alert("something went wrong in displaying Girl Perfume items");
-  }
+    try {
+        let res = await fetch(`${baseURL}/PerfumeCart`);
+        let data = await res.json();
+        return data;
+    } catch (err) {
+        console.log(err);
+        alert("Something went wrong in displaying Girl Perfume items");
+    }
 }
 
+// Display perfumes in the cart
 function displayTodo(arr) {
-  let cont = document.getElementById("Perf");
-  cont.innerHTML = "";
+    let cont = document.getElementById("Perf");
+    cont.innerHTML = "";
 
-  arr.map((el, i) => {
-    let parent = document.createElement("div");
-    parent.id = "parent"
-    parent.setAttribute("class", "Cart-perf-card");
+    arr.map((el, i) => {
+        let parent = document.createElement("div");
+        parent.id = "parent";
+        parent.setAttribute("class", "Cart-perf-card");
 
-    let Image = document.createElement("img");
-    Image.src =  `${el.Image}`;
-    parent.appendChild(Image)
+        let Image = document.createElement("img");
+        Image.src = `${el.Image}`;
+        parent.appendChild(Image);
 
-    let Title = document.createElement("h4");
-    Title.textContent = ` Title: ${el.Title}`;
-    parent.appendChild(Title)
+        let Title = document.createElement("h4");
+        Title.textContent = `Title: ${el.Title}`;
+        parent.appendChild(Title);
 
+        let price = document.createElement("h5");
+        price.textContent = `${el.Price}`;
+        parent.appendChild(price);
 
-   let price = document.createElement("h5");
-   price.textContent = `${el.Price}`;
-   parent.appendChild(price)
+        // Delete button
+        let DeleteBtn = document.createElement("button");
+        DeleteBtn.setAttribute("id", "DeleteBtn");
+        DeleteBtn.textContent = "Remove Product";
 
+        DeleteBtn.addEventListener("click", async function () {
+            await deleteItem(el.id);
+            await refreshCart(); // Refresh cart after deleting
+        });
 
-   // let Deadline = document.createElement("h5");
-   // Deadline.textContent = `Deadline: ${el.Deadline}`;
-
-  //  let Priority = document.createElement("h5");
-  //  Priority.textContent = `Priority: ${el.Priority}`;
-
-  //  let status = document.createElement("h4");
-  //  status.textContent =
-   //   el.status == true ? "Status - Completed" : "Status - Pending";
-   // console.log(el.status);
-
-  //  let UpdateStatusBtn = document.createElement("button");
-  //  UpdateStatusBtn.textContent = "Togle Satus";
-
-   // UpdateStatusBtn.addEventListener("click", function () {
-   //   updateStatusfun(el, i);
-   // });
-
-    //to delete item from cart 
-     let DeleteBtn = document.createElement("button");
-     DeleteBtn.setAttribute("id" , "DeleteBtn")
-    DeleteBtn.textContent = "Remove Product";
-
-    DeleteBtn.addEventListener("click", function () {
-     DeleteTodofun(el, i);
-      });
-
-    parent.append(Image, Title, price, DeleteBtn );
-    cont.append(parent);
-  });
-}
-window.onload = async () => {
-  let arr = await getTodo();
-  displayTodo(arr);
-};
-
-// to delete item
-function DeleteTodofun(el, i) {
-  let deleteID = el.id;
-  fetch(`${baseURL}/PerfumeCart/${deleteID}`, {
-    method: "DELETE",
-  })
-    .then(() => {
-      alert("Product Removed From Cart");
-      window.location.reload();
-    })
-    .catch((err) => {
-      alert("Something went wrong in removing item");
-      console.log(err);
+        parent.appendChild(DeleteBtn);
+        cont.appendChild(parent);
     });
 }
+
+// Delete item from cart
+async function deleteItem(itemId) {
+    try {
+        await fetch(`${baseURL}/PerfumeCart/${itemId}`, { method: "DELETE" });
+        alert("Product Removed From Cart");
+    } catch (err) {
+        alert("Something went wrong in removing item");
+        console.error(err);
+    }
+}
+
+// Update the order button based on cart content
+function updateOrderButton(cartItems) {
+    let orderButton = document.getElementById("orderButton");
+
+    if (cartItems.length === 0) {
+        orderButton.textContent = "Add items to cart";
+        orderButton.onclick = null;  // No action if cart is empty
+    } else {
+        orderButton.textContent = "Place Order";
+        orderButton.onclick = placeOrder;  // Attach place order event
+    }
+}
+
+// Place order function (clears cart + popup)
+async function placeOrder() {
+    document.getElementById('popup').style.display = 'flex';
+
+    // Clear all items from cart
+    await clearCart();
+
+    // Refresh cart display after placing order
+    await refreshCart();
+}
+
+// Clear the whole cart
+async function clearCart() {
+    try {
+        let cartItems = await getTodo();
+        for (let item of cartItems) {
+            await fetch(`${baseURL}/PerfumeCart/${item.id}`, { method: "DELETE" });
+        }
+        console.log("Cart cleared.");
+    } catch (err) {
+        console.error("Error clearing cart:", err);
+        alert("Something went wrong while clearing the cart.");
+    }
+}
+
+// Refresh the whole cart (get items, display items, update button)
+async function refreshCart() {
+    let cartItems = await getTodo();
+    displayTodo(cartItems);
+    updateOrderButton(cartItems);
+}
+
+// Close popup handler
+document.getElementById('closeButton').addEventListener('click', () => {
+    document.getElementById('popup').style.display = 'none';
+});
+
+// On page load
+window.onload = refreshCart;
