@@ -1,9 +1,7 @@
 # PerfumeFullStack
-# 🌸 Reeba Perfumes - Luxury Fragrance Store
+# 🌸 Eeeba Perfumes - Luxury Fragrance Store
 
-Welcome to **Reeba Perfumes**, a beautifully designed e-commerce website for luxury and designer perfumes. This project showcases a collection of perfumes for **men, women, and luxury lovers**, with features like a shopping cart, order placement, and user authentication.
-
-![Website Preview](https://yourwebsite.com/preview.png)  <!-- Add your image link here -->
+Welcome to **Eeba Perfumes**, a beautifully designed e-commerce website for luxury and designer perfumes. This project showcases a collection of perfumes for **men, women, and luxury lovers**, with features like a shopping cart, order placement, and user authentication.
 
 ---
 
@@ -30,20 +28,21 @@ reeba-perfumes/ │── index.html # Home Page │── Girls.html # Women's 
 
 ## ⚙️ How to Run Locally
 1️⃣ Clone the repository:  
-git clone https://github.com/yourgithubusername/reeba-perfumes.git
-
+git clone https://github.com/AreebaMajid-15/Perfumes.git
 2️⃣ Open the project folder:
-cd reeba-perfumes
-
+cd Eeba-perfumes
 3️⃣ Run a live server (you can use VS Code Live Server or a simple HTTP server):
 npx http-server
-
 4️⃣ Open http://localhost:8080/ in your browser. 🚀
+
+---
 
 ## 🛠️ Technologies Used
 Frontend: HTML, CSS, JavaScript
 Backend: JSON Server (Glitch JSON Server)
 Hosting: GitHub Pages
+
+---
 
 ## 📌 Future Enhancements
 🔹 Add payment gateway integration (Stripe/PayPal)
