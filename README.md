@@ -38,11 +38,10 @@ npx http-server
 ---
 
 ## 🛠️ Technologies Used
-Frontend: HTML, CSS, JavaScript
-Backend: JSON Server (Glitch JSON Server)
-Hosting: GitHub Pages
+- Frontend: HTML, CSS, JavaScript
+- Backend: JSON Server (Glitch JSON Server)
+- Hosting: GitHub Pages
 
----
 
 ## 📌 Future Enhancements
 🔹 Add payment gateway integration (Stripe/PayPal)
