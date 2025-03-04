@@ -25,9 +25,11 @@ reeba-perfumes/ ├── index.html # Home Page ├── Girls.html # Women's 
 git clone https://github.com/AreebaMajid-15/Perfumes.git
 
 2️⃣ Open the project folder:
+
 cd Eeba-perfumes
 
 3️⃣ Run a live server (you can use VS Code Live Server or a simple HTTP server):
+
 npx http-server
 
 4️⃣ Open http://localhost:8080/ in your browser. 🚀
